@@ -58,10 +58,12 @@
 
     </style>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="/openseadragon/openseadragon.min.js"></script>
     
 </head>
 
 <body>
+    <div id="openseadragon1" style="width: 800px; height: 600px;"></div>
     <div class = "box">
             <div class="legend">
                     
@@ -155,6 +157,11 @@
     </div>
 
     <script>
+        var viewer = OpenSeadragon({
+                id: "openseadragon1",
+                prefixUrl: "/openseadragon/images/",
+                tileSources: "/tiles/View_01.dzi"
+            });
 
         $("#b1").mouseenter(function(){$('img:not(#view01)').hide(0, function(){$("#view01").show(0, function(){});});});
         $("#b2").mouseenter(function(){$('img:not(#view02)').hide(0, function(){$("#view02").show(0, function(){});});});
