@@ -11,29 +11,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 700px;
+            height: 900px;
             overflow: hidden;
-        }
-
-        .box .oblique{
-            width: auto; 
-            height: 700px; 
-            order: 2;
-            margin-right: 40px;
-            margin-left: 20px;
-            border-radius: 10px;
-            display: flex;
-            box-shadow: 1px 1px 40px #00000052;
-            transition: 0.7s
-        }
-
-        .box .oblique:hover{
-            transform: scale(1.5);
         }
     
         .box .legend{
             enable-background:new 0 0 7292.2 5783.6;
-            width: 700px; 
+            width: 500px; 
             height: auto; 
             margin-left: 40px;
             margin-right: 20px;
@@ -61,8 +45,8 @@
         }
 
         .oblique-maps { 
-            width: 500px; 
-            height: 545px; 
+            width: 600px; 
+            height: 700px; 
             order: 2;
             margin-right: 40px;
             margin-left: 20px;
@@ -77,6 +61,7 @@
 
     </style>
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="/Users/klausmayr/Documents/code/oblique-web-map/openseadragon/openseadragon.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
     integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
     crossorigin=""/>
@@ -96,76 +81,80 @@
                     
                     <svg version="1.1" id="nav" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         viewBox="0 0 7292.2 5783.6" xml:space="preserve">
-                            <image xlink:href="pngs/Navy_survey_map.png"  transform="matrix(3.6885 0 0 3.6885 0 0)">
+                            <image xlink:href="pngs/Navy_survey_map.png" style="width: 1977px; height: auto;"  transform="matrix(3.6885 0 0 3.6885 0 0)">
                             </image>
-                                <circle id="b1" class="st0" onclick="changeTile('mapTiles/View_01_files/{z}/{x}_{y}.jpg')" cx="3311.2" cy="5457.8" r="88.4"/>
-                                <circle id="b2" class="st0" onclick="changeTile('mapTiles/View_2_files/{z}/{x}_{y}.jpg')" cx="3025.5" cy="5419.8" r="89.2"/>
-                                <circle id="b3" class="st0"  onclick="changeTile('mapTiles/View_3_files/{z}/{x}_{y}.jpg')"cx="2863.5" cy="5244.2" r="89.2"/>
-                                <circle id="b4" class="st0" onclick="changeTile('mapTiles/View_4_files/{z}/{x}_{y}.jpg')" cx="2637.1" cy="5272.8" r="89.2"/>
-                                <circle id="b5" class="st0" onclick="changeTile('mapTiles/View_5_files/{z}/{x}_{y}.jpg')" cx="2471.8" cy="5119.8" r="89.2"/>
+                                <circle id="b1" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View1/{z}/{x}_{y}.png')" cx="3311.2" cy="5457.8" r="88.4"/>
+                                <circle id="b2" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View2/{z}/{x}_{y}.png')" cx="3025.5" cy="5419.8" r="89.2"/>
+                                <circle id="b3" class="st0"  onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View3/{z}/{x}_{y}.png')"cx="2863.5" cy="5244.2" r="89.2"/>
+                                <circle id="b4" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View4/{z}/{x}_{y}.png')" cx="2637.1" cy="5272.8" r="89.2"/>
+                                <circle id="b5" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View5/{z}/{x}_{y}.png')" cx="2471.8" cy="5119.8" r="89.2"/>
                                 
-                                <circle id="b29" onclick="changeTile('mapTiles/View_029_files/{z}/{x}_{y}.jpg')" class="st0" cx="3316.4" cy="2673.8" r="88.1"/>
+                                <circle id="b29" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View29/{z}/{x}_{y}.png')" class="st0" cx="3316.4" cy="2673.8" r="88.1"/>
                             
-                                <circle id="b31" class="st0" onclick="changeTile('mapTiles/View_031_files/{z}/{x}_{y}.png')" cx="3606.2" cy="2713.7" r="88.1"/>
-                                <circle id="b30" class="st0" onclick="changeTile('mapTiles/View_030_files/{z}/{x}_{y}.png')" cx="3429.5" cy="2871.8" r="88.1"/>
-                                <circle id="b32" class="st0" onclick="changeTile('mapTiles/View_032_files/{z}/{x}_{y}.png')" cx="3806.4" cy="2826.1" r="88.1"/>
-                                <circle id="b33" class="st0" onclick="changeTile('mapTiles/View_033_files/{z}/{x}_{y}.png')" cx="3922.6" cy="2575.3" r="88.1"/>
-                                <circle id="b35" class="st0" onclick="changeTile('mapTiles/View_035_files/{z}/{x}_{y}.png')" cx="4382.6" cy="2636.4" r="88.1"/>
-                                <circle id="b36" class="st0" onclick="changeTile('mapTiles/View_036_files/{z}/{x}_{y}.png')" cx="4580.4" cy="2505.6" r="88.1"/>
-                                <circle id="b34" class="st0" onclick="changeTile('mapTiles/View_034_files/{z}/{x}_{y}.png')" cx="4375.1" cy="2389.3" r="88.1"/>
-                                <circle id="b24" class="st0" onclick="changeTile('mapTiles/View_024_files/{z}/{x}_{y}.png')" cx="3107.3" cy="2215.7" r="88.1"/>
-                                <circle id="b25" class="st0" onclick="changeTile('mapTiles/View_025_files/{z}/{x}_{y}.png')" cx="2792.2" cy="2400.4" r="88.1"/>
-                                <circle id="b26" class="st0" onclick="changeTile('mapTiles/View_026_files/{z}/{x}_{y}.jpg')" cx="2866.1" cy="2633.7" r="88.1"/>
-                                <circle id="b27" class="st0" onclick="changeTile('mapTiles/View_027_files/{z}/{x}_{y}.png')" cx="2959.2" cy="2858.7" r="88.1"/>
-                                <circle id="b28" class="st0" onclick="changeTile('mapTiles/View_028_files/{z}/{x}_{y}.png')" cx="3120.6" cy="3030" r="88.1"/>
-                                <circle id="b23" class="st0" onclick="changeTile('mapTiles/View_023_files/{z}/{x}_{y}.png')" cx="2708" cy="2805.1" r="88.1"/>
-                                <circle id="b20" class="st0" onclick="changeTile('mapTiles/View_020_files/{z}/{x}_{y}.png')" cx="2504.7" cy="2895.8" r="88.1"/>
-                                <circle id="b21" class="st0" onclick="changeTile('mapTiles/View_021_files/{z}/{x}_{y}.png')" cx="2449.4" cy="2651.2" r="88.1"/>
-                                <circle id="b19" class="st0" onclick="changeTile('mapTiles/View_019_files/{z}/{x}_{y}.png')" cx="2283.8" cy="2985.8" r="88.1"/>
-                                <circle id="b18" class="st0" onclick="changeTile('mapTiles/View_018_files/{z}/{x}_{y}.png')" cx="1655.8" cy="3297.2" r="88.1"/>
-                                <circle id="b17" class="st0" onclick="changeTile('mapTiles/View_017_files/{z}/{x}_{y}.png')" cx="1435.8" cy="3284.1" r="88.1"/>
-                                <circle id="b13" class="st0" onclick="changeTile('mapTiles/View_013_files/{z}/{x}_{y}.png')" cx="1198.8" cy="3319.4" r="88.1"/>
-                                <circle id="b14" class="st0" onclick="changeTile('mapTiles/View_014_files/{z}/{x}_{y}.png')" cx="1298.6" cy="3514.7" r="88.1"/>
-                                <circle id="b16" class="st0" onclick="changeTile('mapTiles/View_016_files/{z}/{x}_{y}.png')" cx="1079.5" cy="3586" r="89.2"/>
-                                <circle id="b15" class="st0" onclick="changeTile('mapTiles/View_015_files/{z}/{x}_{y}.png')" cx="1302.6" cy="3743.6" r="88.5"/>
-                                <circle id="b12" class="st0" onclick="changeTile('mapTiles/View_012_files/{z}/{x}_{y}.png')" cx="1330.7" cy="4173.9" r="89.2"/>
-                                <circle id="b11" class="st0" onclick="changeTile('mapTiles/View_11_files/{z}/{x}_{y}.png')" cx="1599.2" cy="4329.2" r="89.2"/>
-                                <circle id="b10" onclick="changeTile('mapTiles/View_10_files/{z}/{x}_{y}.png')" class="st0" cx="1419.3" cy="4463.6" r="89.2"/>
+                                <circle id="b31" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View31/{z}/{x}_{y}.png')" cx="3606.2" cy="2713.7" r="88.1"/>
+                                <circle id="b30" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View30/{z}/{x}_{y}.png')" cx="3429.5" cy="2871.8" r="88.1"/>
+                                <circle id="b32" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View32/{z}/{x}_{y}.png')" cx="3806.4" cy="2826.1" r="88.1"/>
+                                <circle id="b33" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View33/{z}/{x}_{y}.png')" cx="3922.6" cy="2575.3" r="88.1"/>
+                                <circle id="b35" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View35/{z}/{x}_{y}.png')" cx="4382.6" cy="2636.4" r="88.1"/>
+                                <circle id="b36" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View36/{z}/{x}_{y}.png')" cx="4580.4" cy="2505.6" r="88.1"/>
+                                <circle id="b34" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View34/{z}/{x}_{y}.png')" cx="4375.1" cy="2389.3" r="88.1"/>
+                                <circle id="b24" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View2/{z}/{x}_{y}.png')" cx="3107.3" cy="2215.7" r="88.1"/>
+                                <circle id="b25" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View25/{z}/{x}_{y}.png')" cx="2792.2" cy="2400.4" r="88.1"/>
+                                <circle id="b26" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View26/{z}/{x}_{y}.png')" cx="2866.1" cy="2633.7" r="88.1"/>
+                                <circle id="b27" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View27/{z}/{x}_{y}.png')" cx="2959.2" cy="2858.7" r="88.1"/>
+                                <circle id="b28" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View28/{z}/{x}_{y}.png')" cx="3120.6" cy="3030" r="88.1"/>
+                                <circle id="b23" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View23/{z}/{x}_{y}.png')" cx="2708" cy="2805.1" r="88.1"/>
+                                <circle id="b20" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View20/{z}/{x}_{y}.png')" cx="2504.7" cy="2895.8" r="88.1"/>
+                                <circle id="b21" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View21/{z}/{x}_{y}.png')" cx="2449.4" cy="2651.2" r="88.1"/>
+                                <circle id="b19" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View19/{z}/{x}_{y}.png')" cx="2283.8" cy="2985.8" r="88.1"/>
+                                <circle id="b18" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View18/{z}/{x}_{y}.png')" cx="1655.8" cy="3297.2" r="88.1"/>
+                                <circle id="b17" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View17/{z}/{x}_{y}.png')" cx="1435.8" cy="3284.1" r="88.1"/>
+                                <circle id="b13" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View13/{z}/{x}_{y}.png')" cx="1198.8" cy="3319.4" r="88.1"/>
+                                <circle id="b14" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View14/{z}/{x}_{y}.png')" cx="1298.6" cy="3514.7" r="88.1"/>
+                                <circle id="b16" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View16/{z}/{x}_{y}.png')" cx="1079.5" cy="3586" r="89.2"/>
+                                <circle id="b15" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View15/{z}/{x}_{y}.png')" cx="1302.6" cy="3743.6" r="88.5"/>
+                                <circle id="b12" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View12/{z}/{x}_{y}.png')" cx="1330.7" cy="4173.9" r="89.2"/>
+                                <circle id="b11" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View11/{z}/{x}_{y}.png')" cx="1599.2" cy="4329.2" r="89.2"/>
+                                <circle id="b10" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View10/{z}/{x}_{y}.png')" class="st0" cx="1419.3" cy="4463.6" r="89.2"/>
                                 <circle id="b9" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View9/{z}/{x}_{y}.png')" cx="1558.2" cy="4822.3" r="89.2"/>
-                                <circle id = "b8" class="st0" onclick="changeTile('mapTiles/View_8_files/{z}/{x}_{y}.jpg')" cx="1979.5" cy="4918.2" r="89.2"/>
-                                <circle id = "b7" class="st0" onclick="changeTile('mapTiles/View_7_files/{z}/{x}_{y}.png')" cx="1984.4" cy="5155.5" r="89.2"/>
-                                <circle id="b6" class="st0" onclick="changeTile('mapTiles/View_6_files/{z}/{x}_{y}.jpg')" cx="2284.4" cy="5248.6" r="89.2"/>
-                                <circle id="b22"class="st0" onclick="changeTile('mapTiles/View_022_files/{z}/{x}_{y}.png')" cx="2769.6" cy="3262.7" r="88.1"/>
+                                <circle id = "b8" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View8/{z}/{x}_{y}.png')" cx="1979.5" cy="4918.2" r="89.2"/>
+                                <circle id = "b7" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View7/{z}/{x}_{y}.png')" cx="1984.4" cy="5155.5" r="89.2"/>
+                                <circle id="b6" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View6/{z}/{x}_{y}.png')" cx="2284.4" cy="5248.6" r="89.2"/>
+                                <circle id="b22"class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View22/{z}/{x}_{y}.png')" cx="2769.6" cy="3262.7" r="88.1"/>
                     </svg>
                 <!-- <p>Move your cursor over the numbers to view different aerial images.</p> -->
                 </div>
-            <!-- <div id="tileSource" value="mapTiles/View_01_files/{z}/{x}_{y}.jpg"></div> -->
-            <div id="map" class='oblique-maps'></div>
+            <div id="map" class='oblique-maps' style="background-color: black"></div>
+
 
 
     </div>
 
-    <script type="application/javascript">
+    <script>
 
+        let tileSource;
         function changeTile(newTile){
             tile.setUrl(newTile)
+        }
+
+        function rightChange(){
+
         }
 
 
         var map = L.map('map', {
             crs: L.CRS.Simple,
-        });
+        }).setView([-.5, .43], 9);
 
 
-        var tile = L.tileLayer.zoomify('mapTiles/View_01_files/{z}/{x}_{y}.jpg', {
-            minZoom: 1,
-            maxZoom: 5,
-			width: 1800,
-			height: 1980,
+        var tile = L.tileLayer('https://cartocollective.blob.core.windows.net/vieques/oblique/View1/{z}/{x}_{y}.png', {
+            // L.tileLayer('/Users/javierarce/Downloads/MagickSlicer-master/View_036_files/{z}/{x}_{y}.png', {
+            attribution: 'Archivo Histórico de Vieques - Colección Bonnie Donohue',
+            minZoom: 0,
+            maxZoom: 14,
+            maxNativeZoom: 11,
             tileSize: 256,
-		    }).addTo(map)
-
-        map.fitBounds([[8,207],[-264.5, 49]]);
+        }).addTo(map);
 
 
 
