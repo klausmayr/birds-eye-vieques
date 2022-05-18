@@ -75,9 +75,6 @@
 </head>
 
 <body>
-    <script></script>  
-    <!-- <div id="map" class='oblique-maps'></div>
-    <div id="map2"></div> -->
     <div class = "box">
             <div class="legend">
                     
@@ -124,7 +121,6 @@
                                 <circle id="b6" class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View6/{z}/{x}_{y}.png')" cx="2284.4" cy="5248.6" r="89.2"/>
                                 <circle id="b22"class="st0" onclick="changeTile('https://cartocollective.blob.core.windows.net/vieques/oblique/View22/{z}/{x}_{y}.png')" cx="2769.6" cy="3262.7" r="88.1"/>
                     </svg>
-                <!-- <p>Move your cursor over the numbers to view different aerial images.</p> -->
                 </div>
             <div id="map" class='oblique-maps' style="background-color: black"></div>
 
@@ -134,20 +130,13 @@
 
     <script>
 
-        let tileSource;
         function changeTile(newTile){
             tile.setUrl(newTile)
         }
 
-        function rightChange(){
-
-        }
-
-
         var map = L.map('map', {
             crs: L.CRS.Simple,
         }).setView([-.5, .43], 9);
-
 
         var tile = L.tileLayer('https://cartocollective.blob.core.windows.net/vieques/oblique/View1/{z}/{x}_{y}.png', {
             // L.tileLayer('/Users/javierarce/Downloads/MagickSlicer-master/View_036_files/{z}/{x}_{y}.png', {
