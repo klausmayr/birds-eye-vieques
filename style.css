@@ -23,6 +23,7 @@
             box-shadow: 1px 1px 40px #00000052;
             transition: 0.7s;
             justify-self: center;
+            resize: both
         }
         .st0{
             opacity:0.30;
